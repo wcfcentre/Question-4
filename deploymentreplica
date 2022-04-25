@@ -1,0 +1,17 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+ name: hellotome
+spec:
+ replicas: 3
+ selector:
+   matchLabels:
+     app: hellotome
+ template:
+   metadata:
+     labels:
+       app: hellotome
+   spec:
+     containers:
+     - name: hellotome
+       image: gcr.io/google-samples/hello-app:1.0
